@@ -1,0 +1,133 @@
+{% extends "wrapper.html" %}
+
+{% block nav %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div style="vertical-align:middle" class="container">
+            <div  id="logo_title" class="navbar-header">
+                <a class="page-scroll" href="#page-top">
+                    <img id="logo" src="/static/image/kirogazcor_inv.png" width="60px">
+                    <span id="title">kirogazcor</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Обо мне</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#education">Образование</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#work">Опыт работы</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#projects">Проекты</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+{% endblock %}
+{% block header %}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading" style="margin: 50px auto 0;">{{about_me_db.name}} {{about_me_db.surname}}</h1>
+                        <p class="intro-text">Добро пожаловать на сайт-резюме начинающего программиста
+                        </p>
+                        <br>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Обо мне</h2>
+                <img src="/static/image/me.jpg" class="img-circle king" width="200">
+                <br>
+                <p>Меня зовут {{about_me_db.surname}} {{about_me_db.name}}. {{about_me_db.about}}</p>
+                <p>Живу в городе {{about_me_db.city}}.</p>
+                <p>День рождения: {{ about_me_db.birthday|date:'d E Y' }}</p>
+                <p>УСЛОВИЯ:<br>{{about_me_db.suggestions|safe}}</p>
+                <p>КЛЮЧЕВЫЕ НАВЫКИ:<br>{{about_me_db.skills}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="content-section text-center">
+        <div class="education-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Образование</h2>
+                    <p>{{about_me_db.education}}</p>
+                    <a href="education" class="btn btn-default btn-lg">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Projects Section -->
+    <section id="projects" class="content-section text-center">
+        <div class="projects-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Проекты</h2>
+                    <p>{{about_me_db.projects}}</p>
+                    <a href="projects" class="btn btn-default btn-lg">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!--<section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Работа</h2>
+                <p>На данный момент работаю в сфере строительства промышленных предприятий. Занимаюсь календарным, ресурсным и финансовым планированием проектов.</p>
+                <a href="http://127.0.0.1:8000/work" class="btn btn-default btn-lg">Подробнее</a>
+                <br>
+                <br>
+                <br>
+                <p><a href="mailto:de_drum@mymail.com">de_drum@mymail.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://vk.com/naked_drummer" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-vk fa-fw"></i> <span class="network-name">Vkontakte</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/dershov73" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/nakeddrummer91/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>-->
+{% endblock %}

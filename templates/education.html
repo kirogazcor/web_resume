@@ -1,0 +1,67 @@
+{% extends "wrapper.html" %}
+
+{% block nav %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div style="vertical-align:middle" class="container">
+            <div  id="logo_title" class="navbar-header">
+                <a class="page-scroll" href="#page-top">
+                    <img id="logo" src="/static/image/kirogazcor_inv.png" width="60px">
+                    <span id="title">kirogazcor</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="../">На главную</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+{% endblock %}
+{% block header %}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading" style="margin: 50px auto 0;">Образование</h1>
+                        <br>
+                        <a href="#education" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content %}
+    <section id="education" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                {% for education in education_db %}
+                <ul class="about-list">
+                    <li><h2>{{ education.institution }}</h2></li>
+                    <li><span>Квалификация:</span> {{ education.qualification }}</li>
+                    <li><span>Специальность:</span> {{ education.specialty }}</li>
+                    <li><span>Период:</span> {{ education.start }} - {% if education.end != Now %}{{ education.end }}{% else %}настоящее время{% endif %}</li>
+                    {% if education.site %}
+                        <li><span>Сайт:</span> <a href="http://{{ education.site }}" target="_blank">{{ education.site }}</a></li>
+                    {% endif %}
+                    <li>{{ education.description }}</li>
+                </ul><hr><br>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
