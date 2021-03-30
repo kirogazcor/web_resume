@@ -52,12 +52,12 @@
                     <li><h2>{{ project.name }}</h2></li>
                     <li><img src="{{ project.image.url }}" width="100%"><li>
                     <li>{{ project.description|safe }}</li>
-                    <li>Реализация: <a href="http://{{ project.realize }}" target="_blank">{{ project.realize }}</a></li>
-                    <li>Исходный код: <a href="http://{{ project.git }}" target="_blank">{{ project.git }}</a></li>
+                    {% if project.realize %}
+                    <li>Реализация: <a href="{{ project.realize }}" target="_blank">{{ project.realize }}</a></li>
+                    {% endif %}
+                    <li>Исходный код: <a href="{{ project.git }}" target="_blank">{{ project.git }}</a></li>
                 </ul><hr><br>
                 {% endfor %}
-
-
             </div>
         </div>
     </section>
