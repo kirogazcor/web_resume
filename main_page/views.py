@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
-from .models import AboutMe, Education, Projects
+from .models import AboutMe, Education, Projects, Work
 
 Now = datetime.datetime.now()
 Year = str(Now.year)
@@ -33,4 +33,14 @@ def projects(request):
         'projects_db': projects_db,
     }
     return render(request, 'projects.html', projects_content)
+
+def work(request):
+    work_db = Work.objects.all()
+    work_content = {
+        'title': 'Опыт работы',
+        'Year': Year,
+        'work_db': work_db,
+    }
+    return render(request, 'work.html', work_content)
+
 # Create your views here.

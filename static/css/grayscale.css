@@ -231,11 +231,24 @@ a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
+
+.work-section {
+  width: 100%;
+  padding: 50px 0;
+  color: white;
+  background: url(../image/work_bg.jpg) no-repeat center center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 .projects-section {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(../image/downloads-bg.jpg) no-repeat center center scroll;
+  background: url(../image/projects_bg.png) no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;

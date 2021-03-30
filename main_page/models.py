@@ -19,6 +19,7 @@ class AboutMe(models.Model):
     skills = models.TextField(verbose_name='Навыки')
     education = models.TextField(verbose_name='Образование')
     projects = models.TextField(verbose_name='Проекты')
+    work = models.TextField(verbose_name='Опыт работы')
 
     class Meta:
         managed = False
@@ -47,3 +48,14 @@ class Projects(models.Model):
     class Meta:
         managed = False
         db_table = 'projects'
+
+class Work(models.Model):
+    organization = models.CharField(verbose_name='Организация', max_length=64)
+    post = models.CharField(verbose_name='Должность', max_length=32)
+    duties = models.TextField(verbose_name='Обязанности')
+    start = models.DateField(verbose_name='Начало')
+    end = models.DateField(verbose_name='Конец', default=timezone.now)
+
+    class Meta:
+            managed = False
+            db_table = 'work'
