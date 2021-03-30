@@ -31,7 +31,7 @@
                         <a class="page-scroll" href="#projects">Проекты</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contacts">Контакты</a>
+                        <a class="page-scroll" href="#contact">Контакты</a>
                     </li>
                 </ul>
             </div>
@@ -118,29 +118,21 @@
     </section>
 
     <!-- Contact Section -->
-    <!--<section id="contact" class="container content-section text-center">
+    <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Работа</h2>
-                <p>На данный момент работаю в сфере строительства промышленных предприятий. Занимаюсь календарным, ресурсным и финансовым планированием проектов.</p>
-                <a href="http://127.0.0.1:8000/work" class="btn btn-default btn-lg">Подробнее</a>
-                <br>
-                <br>
-                <br>
-                <p><a href="mailto:de_drum@mymail.com">de_drum@mymail.com</a>
-                </p>
+                <h2>Контакты</h2>
+                <p><a href="mailto:{{about_me_db.email}}">{{about_me_db.email}}</a></p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://vk.com/naked_drummer" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-vk fa-fw"></i> <span class="network-name">Vkontakte</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/dershov73" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/nakeddrummer91/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                        <a href="{{about_me_db.github}}" target="_blank"
+                           class="btn btn-default btn-lg">
+                            <i class="fa fa-github fa-fw"></i>
+                            <span class="network-name">Github</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </section>-->
+    </section>
 {% endblock %}

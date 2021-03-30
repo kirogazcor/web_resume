@@ -20,6 +20,8 @@ class AboutMe(models.Model):
     education = models.TextField(verbose_name='Образование')
     projects = models.TextField(verbose_name='Проекты')
     work = models.TextField(verbose_name='Опыт работы')
+    email = models.CharField(verbose_name='Почта', max_length=32)
+    github = models.CharField(verbose_name='Github', max_length=32)
 
     class Meta:
         managed = False
